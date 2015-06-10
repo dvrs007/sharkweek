@@ -24,15 +24,15 @@ $query = 'SELECT * FROM instagram';
 
 <div class="row">
     <div class="medium-4 columns">
-        <h2>Twitter</h2>
+        <h2>Vine</h2>
         <?php 
             foreach($vineposts as $p){
-            echo $p['username'] . "<br>" . $p['video'];
+            echo $p['username'] . "<br>";
             }
         ?>
     </div>
     <div class="medium-4 columns">
-        <h2>Vine</h2>
+        <h2>Twitter</h2>
         <?php 
             foreach($twitterposts as $p){
             echo $p['username'] . "<br>" . $p['acctname'];

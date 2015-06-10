@@ -35,7 +35,7 @@ Class VineClass{
 
         $query =
             "INSERT INTO vine
-                 (username, acctname, txtcontent, mediacontent, link, dateposted)
+                 (username, video)
              VALUES
                  ('$username', '$video')";
 
