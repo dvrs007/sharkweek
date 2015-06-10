@@ -1,17 +1,13 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html>
     <head>
         <meta charset="UTF-8">
         <title></title>
+        <link rel="stylesheet" href="css/foundation.min.css" type="text/css" />
+        <link rel="stylesheet" href="css/style.css" type="text/css" />
+        <script src="js/foundation.min.js" type="text/javascript" ></script>
     </head>
     <body>
-        <?php
-        // put your code here
-        ?>
+        
     </body>
 </html>
