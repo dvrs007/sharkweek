@@ -65,7 +65,23 @@ Class Twitter{
     }
 
     public function insertTwitter(){
-        
+        $db = Database::getDB();
+
+        $username = $this->getUsername();
+        $accountname = $this->getAccountname();
+        $txtcontent = $this->getTxtContent();
+        $mediacontent = $this->getMediaContent();
+        $link = $this->getLink();
+        $dateposted = $this->getDateposted();
+
+        $query =
+            "INSERT INTO twitter
+                 (username, acctname, txtcontent, mediacontent, link, dateposted)
+             VALUES
+                 ('$username', '$accountname', '$txtcontent', '$mediacontent', '$link', '$dateposted')";
+
+        $twitter_add = $db->exec($query);
+        return $twitter_add;
     }
 }  
 ?>
