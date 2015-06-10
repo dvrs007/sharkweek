@@ -1,21 +1,22 @@
 <?php
 
-//database
-require('instagramDB.php');
+class InstaDB {
+    
+    public function insertInsta(){
 
-class Insta {
-    
-    
-    private $user, $image, $fullname;
-    
-    
-    function InsertInsta($user, $image, $fullname){
-        
-        $dbcon=Database::getDB();
-        
-        $sql="INSERT INTO instagram(user, img, full_name) VALUES ($user, $image, $fullname)";
-        $dbcon->exec($sql);
-    }
-    
-    
+    	$db = Database::getDB();
+
+    	$user = $this->getUser();
+        $img = $this->getImg();
+        $fname = $this->getFullName();
+
+	    $query = "INSERT INTO instagram
+	    		  (user, img, full_name)
+	    		  VALUES
+	    		  ('$user','$img','$full_name')";
+
+	   	$addInsta = $db->exec($query);
+	   	return $addInsta;
+
+	}  
 }
