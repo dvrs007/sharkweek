@@ -10,7 +10,7 @@
     <body>
         <div class="row">
             <div class="large-4 columns">
-                <h1>LinkedIn</h1>
+                <h1>Twitter</h1>
             </div>
             <div class="large-4 columns">
                 <h1>Vine</h1>
