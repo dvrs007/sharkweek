@@ -38,10 +38,8 @@
 {
 	echo '<div>
 	<h2>'. $value->user->name . ' AS screen name: ' . $value->user->screen_name .'</h2>
-	<img src="' . $value->user->profile_image_url_https .'"/>	<br/>';	
-	//Profile: ' .//$value->user->description . ' <br/>
-	//Created at: './/$value->user->created_at. '<br/>	
-	echo 'Content: '. $value->text .'<br/>
+	<img src="' . $value->user->profile_image_url_https .'"/>	<br/>
+	Content: '. $value->text .'<br/>
 	Hash Tags: ' . $value->entities->hashtags->text . '<br/>
 	Media: <img src="' . $value->entities->media->media_url_https . '"/><br/>
 	Posted at: ' .$value->created_at . '<br/> 
