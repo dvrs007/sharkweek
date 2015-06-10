@@ -23,6 +23,9 @@ $query = 'SELECT * FROM instagram';
 ?>
 
 <div class="row">
+    <h1>#sharkweek Results</h1>
+</div>
+<div class="row">
         <div class="medium-4 columns">
             <h2>Twitter</h2>
             <?php 

@@ -63,5 +63,9 @@ Class Twitter{
         //write the category name for the $value
         $this->dateposted=$value;
     }
+
+    public function insertTwitter(){
+        
+    }
 }  
 ?>
