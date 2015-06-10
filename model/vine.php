@@ -1,19 +1,20 @@
 <?php
 
-require 'database.php';
-
-class vineClass {
+class VineClass {
     
     public function getResults(){
-        Database::getDB();
-        $query = 'SELECT * FROM vine
-                  ORDER BY id DESC';
-        $result = $db->query($query);
-        var_dump($result);
+        require_once 'db.php';
+        $query = 'SELECT * FROM vine';
+        $posts = $db->query($query);
+        //fetch associative arrays from the data so we can reference column names in the foreach loop
+        $allposts = $posts->setFetchMode(PDO::FETCH_ASSOC);
+        
+        return $allposts;
         
     }
+    
     public function insertResults(){
-        Database::getDB();
+        
     }
 }
 

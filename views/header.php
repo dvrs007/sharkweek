@@ -11,14 +11,4 @@
 </head>
 <body>
     
-    <div class="row">
-        <div class="medium-4 columns">
-            Twitter
-        </div>
-        <div class="medium-4 columns">
-            Vine
-        </div>
-        <div class="medium-4 columns">
-            Instagram
-        </div>
-    </div>
+    
