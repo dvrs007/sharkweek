@@ -6,28 +6,19 @@
 	<title>SharkWeek</title>
 	<link href="css/foundation.min.css" type="text/css" rel="stylesheet">
         <link href="css/style.css" type="text/css" rel="stylesheet">
+        
+        <script src="js/foundation.min.js" type="text/javascript" ></script>
 </head>
 <body>
-	
- <div class="navbar navbar-default navbar-static-top" role="navigation">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a href="http://www.dvrsdesign.com"><img class="nav-logo" src=" " alt="Logo"></a>
+    
+    <div class="row">
+        <div class="medium-4 columns">
+            Twitter
         </div>
-        <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-            <li><a href="#">Twitter</a></li>
-            <li><a href="#">Vine</a></li>
-            <li><a href="#">Instagram</a></li>
-            <li><a href="#">Results</a></li>
-            
-          </ul>
-        </div><!--/.nav-collapse -->
-      </div><!--end container-->
+        <div class="medium-4 columns">
+            Vine
+        </div>
+        <div class="medium-4 columns">
+            Instagram
+        </div>
     </div>
