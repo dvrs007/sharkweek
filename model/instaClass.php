@@ -1,5 +1,7 @@
 <?php
 
+require 'model/database.php';
+
 Class Insta {
     
     private $user,$img,$fname;
@@ -36,8 +38,22 @@ Class Insta {
         $this->fname=$value;
     }
 
+    public function insertInsta(){
 
+    	$db = Database::getDB();
 
+    	$user = $this->getUser();
+        $img = $this->getImg();
+        $fname = $this->getFullName();
 
+	    $query = "INSERT INTO instagram
+	    		  (user, img, full_name)
+	    		  VALUES
+	    		  ('$user','$img','$fname')";
+
+	   	$addInsta = $db->exec($query);
+	   	return $addInsta;
+
+	}
 
 }

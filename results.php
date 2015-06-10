@@ -23,33 +23,30 @@ $query = 'SELECT * FROM instagram';
 ?>
 
 <div class="row">
-    <h1>#sharkweek Results</h1>
-</div>
-<div class="row">
-        <div class="medium-4 columns">
-            <h2>Twitter</h2>
-            <?php 
-                foreach($vineposts as $p){
-                echo $p['username'] . "<br>" . $p['video'];
-                }
-            ?>
-        </div>
-        <div class="medium-4 columns">
-            <h2>Vine</h2>
-            <?php 
-                foreach($twitterposts as $p){
-                echo $p['username'] . "<br>" . $p['acctname'];
-                }
-            ?>
-        </div>
-        <div class="medium-4 columns">
-            <h2>Instagram</h2>
-            <?php foreach($instaposts as $p){
-            	echo $p['user'];
-            	echo '<img src="'.$p['img'].'" alt="Image from '.$p['user'].'">';
+    <div class="medium-4 columns">
+        <h2>Twitter</h2>
+        <?php 
+            foreach($vineposts as $p){
+            echo $p['username'] . "<br>" . $p['video'];
             }
-            ?>
-        </div>
+        ?>
+    </div>
+    <div class="medium-4 columns">
+        <h2>Vine</h2>
+        <?php 
+            foreach($twitterposts as $p){
+            echo $p['username'] . "<br>" . $p['acctname'];
+            }
+        ?>
+    </div>
+    <div class="medium-4 columns">
+        <h2>Instagram</h2>
+        <?php foreach($instaposts as $p){
+        	echo '<div>' . $p['user'] . '</div>';
+        	echo '<img src="'.$p['img'].'" alt="Image from '.$p['user'].'">';
+        }
+        ?>
+    </div>
 </div>
 
 

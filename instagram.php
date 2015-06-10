@@ -1,6 +1,7 @@
 <?php
 
 require 'model/instaClass.php';
+require 'model/db.php';
 
 	/*function pre($code){
 		echo '<pre>';
@@ -35,6 +36,6 @@ foreach ( $search->data as $key => $value ) {
 	$instagram->setImg($value->images->thumbnail->url);
 	$instagram->setFullName($value->user->full_name);
 
-	var_dump($instagram);
+	$instagram->insertInsta();
 
 }
