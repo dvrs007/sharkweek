@@ -50,6 +50,8 @@
 	$twitterClass->setLink($value->entities->urls->display_url);
 	$twitterClass->setDateposted($value->created_at);
 
+	$twitterClass->insertTwitter();
+
 	// echo '<div>
 	// <h2>'. $value->user->name . ' AS screen name: ' . $value->user->screen_name .'</h2>
 	// <img src="' . $value->user->profile_image_url_https .'"/>	<br/>
