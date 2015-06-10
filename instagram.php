@@ -1,5 +1,7 @@
 <?php
 
+require 'model/instaClass.php';
+
 	/*function pre($code){
 		echo '<pre>';
 			print_r( $code );
@@ -17,22 +19,22 @@ $instagram = new Instagram( CLIENT_ID );
 
 // $popular = $instagram->getPopularMedia();
 
-$search = $instagram->getTagMedia( 'cute', array( 'count' => 10 ) );
+$search = $instagram->getTagMedia( 'sharkweek', 10 );
 
 //pre( $search );
 
 foreach ( $search->data as $key => $value ) {
 	
-	
-	echo '<div>
-	
-		
-			
-			<h2>'.$value->user->username.'</h2>
-			<img src="'.$value->user->profile_picture.'" />
-			<img src="'.$value->images->thumbnail->url.'" />
-			<br><hr><br>
+	/*echo '<pre>';
+	print_r($value);
+	echo '</pre>';*/
 
-		</div>';
+	$instagram = new Insta();
+
+	$instagram->setUser($value->user->username);
+	$instagram->setImg($value->images->thumbnail->url);
+	$instagram->setFullName($value->user->full_name);
+
+	var_dump($instagram);
 
 }
