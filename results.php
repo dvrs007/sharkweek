@@ -14,6 +14,12 @@ $query = 'SELECT * FROM twitter';
         //fetch associative arrays from the data so we can reference column names in the foreach loop
         $twitterposts->setFetchMode(PDO::FETCH_ASSOC);
 
+//get instagram posts
+$query = 'SELECT * FROM instagram';
+        $instaposts = $db->query($query);
+        //fetch associative arrays from the data so we can reference column names in the foreach loop
+        $instaposts->setFetchMode(PDO::FETCH_ASSOC);
+
 ?>
 
 <div class="row">
@@ -35,6 +41,11 @@ $query = 'SELECT * FROM twitter';
         </div>
         <div class="medium-4 columns">
             <h2>Instagram</h2>
+            <?php foreach($instaposts as $p){
+            	echo $p['user'];
+            	echo '<img src="'.$p['img'].'" alt="Image from '.$p['user'].'">';
+            }
+            ?>
         </div>
 </div>
 
