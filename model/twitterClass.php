@@ -1,87 +1,120 @@
 <?php
 
-Class Twitter{
-    
-    private $username,$accountname,$txtcontent,$mediacontent, $link, $dateposted;
-    
-    public function __construct(){}
-    
- 
-    public function getUsername(){   
-       //read the category id from the table
+Class Twitter {
+
+    private $username, $accountname, $avatar, $hashtags, $txtcontent, $mediacontent, $link, $dateposted;
+
+    public function __construct() {}
+
+    /*
+      public function __construct($user,$acct, $avatar, $hashtags, $txt, $media, $link, $date){
+      $this->username=$user;
+      $this->accountname = $acct;
+      $this->avatar= $avatar;
+      $this->hashtags=$hashtags;
+      $this->txtcontent = $txt;
+      $this->mediacontent = $media;
+      $this->link=$link;
+      $this->dateposted = $date;
+      } */
+
+    public function getUsername() {
+        //read the category id from the table
         return $this->username;
     }
-    
-    public function setUsername($value){
+
+    public function setUsername($value) {
         //write the category id for the $value
-        $this->username=$value;
+        $this->username = $value;
     }
-    
-    public function getAccountname(){
+
+    public function getAccountname() {
         //read the category name from the table
         return $this->accountname;
     }
-    
-    public function setAccountname($value){
+
+    public function setAccountname($value) {
         //write the category name for the $value
-        $this->accountname=$value;
+        $this->accountname = $value;
     }
-    public function getTxtContent(){
+
+    public function getAvatar() {
+        return $this->avatar;
+    }
+
+    public function setAvatar($value) {
+        $this->avatar = $value;
+    }
+
+    public function getHashtags() {
+        return $this->hashtags;
+    }
+
+    public function setHashtags($value) {
+        $this->hashtags = $value;
+    }
+
+    public function getTxtContent() {
         //read the category name from the table
         return $this->txtcontent;
     }
-    
-    public function setTxtContent($value){
+
+    public function setTxtContent($value) {
         //write the category name for the $value
-        $this->txtcontent=$value;
+        $this->txtcontent = $value;
     }
-    public function getMediaContent(){
+
+    public function getMediaContent() {
         //read the category name from the table
         return $this->mediacontent;
     }
-    
-    public function setMediaContent($value){
+
+    public function setMediaContent($value) {
         //write the category name for the $value
-        $this->mediacontent=$value;
+        $this->mediacontent = $value;
     }
-    
-    public function getLink(){
+
+    public function getLink() {
         //read the category name from the table
         return $this->link;
     }
-    
-    public function setLink($value){
+
+    public function setLink($value) {
         //write the category name for the $value
-        $this->link=$value;
+        $this->link = $value;
     }
-    public function getDateposted(){
+
+    public function getDateposted() {
         //read the category name from the table
         return $this->dateposted;
     }
-    
-    public function setDateposted($value){
+
+    public function setDateposted($value) {
         //write the category name for the $value
-        $this->dateposted=$value;
+        $this->dateposted = $value;
     }
 
-    public function insertTwitter(){
+    public function insertTwitter() {
         $db = Database::getDB();
 
         $username = $this->getUsername();
         $accountname = $this->getAccountname();
+        $avatar = $this->getAvatar();
+        $hashtags= $this->getHashtags();
         $txtcontent = $this->getTxtContent();
         $mediacontent = $this->getMediaContent();
         $link = $this->getLink();
         $dateposted = $this->getDateposted();
 
-        $query =
-            "INSERT INTO twitter
-                 (username, acctname, txtcontent, mediacontent, link, dateposted)
+        $query = "INSERT INTO twitter
+                 (username, acctname, avatar, hashtags, txtcontent, mediacontent, link, dateposted)
              VALUES
-                 ('$username', '$accountname', '$txtcontent', '$mediacontent', '$link', '$dateposted')";
+                 ('$username', '$accountname','$avatar','$hashtags', '$txtcontent', '$mediacontent', '$link', '$dateposted')";
 
         $twitter_add = $db->exec($query);
         return $twitter_add;
     }
-}  
+
+}
+
 ?>
