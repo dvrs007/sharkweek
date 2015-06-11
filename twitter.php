@@ -20,16 +20,16 @@ $verify = $connection->get('account/verify_credentials');
 $parameters = array(
     'q' => '#sharkweek',
     //'q' => '#webdevforhire',
-    'count' => 10);
+    'count' => 20);
 
 $results = $connection->get('search/tweets', $parameters);
 //1st arg: api call,  2nd arg:pass those in as an array
 
-/*
+
   echo '<pre>';
   print_r($results);
   echo '</pre>';
- */
+ 
 
 foreach ($results->statuses as $value) {
 //this was not working with $statuses->results June6
@@ -48,7 +48,7 @@ foreach ($results->statuses as $value) {
     //echo '</pre>';
     //echo implode("" , $tags);
     
-   
+  
       $twitterClass = new Twitter();
 
       $twitterClass->setUsername($value->user->name);
@@ -59,18 +59,19 @@ foreach ($results->statuses as $value) {
       $twitterClass->setMediaContent($value->entities->media[0]->media_url_https);
       $twitterClass->setLink($value->entities->urls[0]->expanded_url);
       $twitterClass->setDateposted(date("Y-m-d H:i:s",strtotime($value->created_at)));
+      $twitterClass->setPostingID($value->id_str);
 
       $twitterClass->insertTwitter();
-
-    /*
+/*
+    echo $value->id_str.'<br/>';
     echo '<div>
 	 <h2>' . $value->user->name . ' // account name: ' . $value->user->screen_name . '</h2>
 	 <img src="' . $value->user->profile_image_url_https . '"/>	<br/>
 	 Content: <strong>' . $value->text . '</strong><br/>
          Hash Tags: ';
-    $hashtags = array();
-    $hashtags = $value->entities->hashtags;
-    $n = count($hashtags);
+    //$hashtags = array();
+    //$hashtags = $value->entities->hashtags;
+    //$n = count($hashtags);
 
     for ($i = 0; $i < $n; $i++) {
         echo ' [' . ($i + 1) . '] ' . $hashtags[$i]->text;
@@ -96,6 +97,6 @@ foreach ($results->statuses as $value) {
     echo '<br/><hr/><br/>'
     . '</div>';
      
-     */
+    */
 }
 ?>

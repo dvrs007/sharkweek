@@ -2,7 +2,7 @@
 
 Class Twitter {
 
-    private $username, $accountname, $avatar, $hashtags, $txtcontent, $mediacontent, $link, $dateposted;
+    private $username, $accountname, $avatar, $hashtags, $txtcontent, $mediacontent, $link, $dateposted, $timestamp, $posting_id;
 
     public function __construct() {}
 
@@ -93,6 +93,14 @@ Class Twitter {
         //write the category name for the $value
         $this->dateposted = $value;
     }
+    
+    public function getPostingID(){
+        return $this->posting_id;
+    }
+    
+    public function setPostingID($value){
+        $this->posting_id=$value;
+    }
 
     public function insertTwitter() {
         $db = Database::getDB();
@@ -105,12 +113,14 @@ Class Twitter {
         $mediacontent = $this->getMediaContent();
         $link = $this->getLink();
         $dateposted = $this->getDateposted();
+        $postingID = $this->getPostingID();
 
-        $query = "INSERT INTO twitter
-                 (username, acctname, avatar, hashtags, txtcontent, mediacontent, link, dateposted)
+        //the following query won't insert a duplicate posting , recognized by posting_id(UNIQUE)
+        $query = "INSERT IGNORE INTO twitter
+                 (username, acctname, avatar, hashtags, txtcontent, mediacontent, link, dateposted, posting_id)
              VALUES
-                 ('$username', '$accountname','$avatar','$hashtags', '$txtcontent', '$mediacontent', '$link', '$dateposted')";
-
+                 ('$username', '$accountname','$avatar','$hashtags', '$txtcontent', '$mediacontent', '$link', '$dateposted','$postingID')";
+       
         $twitter_add = $db->exec($query);
         return $twitter_add;
     }

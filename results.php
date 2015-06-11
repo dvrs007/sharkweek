@@ -8,7 +8,7 @@ $vineposts = $db->query($query);
 $vineposts->setFetchMode(PDO::FETCH_ASSOC);
 
 //get twitter posts
-$query = 'SELECT * FROM twitter';
+$query = 'SELECT  DISTINCT * FROM twitter ORDER BY dateposted DESC LIMIT 10';
 $twitterposts = $db->query($query);
 //fetch associative arrays from the data so we can reference column names in the foreach loop
 $twitterposts->setFetchMode(PDO::FETCH_ASSOC);
@@ -34,7 +34,8 @@ $instaposts->setFetchMode(PDO::FETCH_ASSOC);
         <?php
         foreach ($twitterposts as $p) {
             echo '<img src="' . $p['avatar'] . '" alt="profile pic from "' . $p['username'] . 'title="avatar" />';
-            echo ' '.$p['username'] . " | <i>" . $p['acctname'] . '</i><br/>';            
+            echo ' '.$p['username'] . " | <i>" . $p['acctname'] . '</i><br/>';
+            echo '# ' . $p['hashtags'].'<br/>';
             echo '<strong>'.$p['txtcontent'] . '</strong><br/>';
 
             if ($p['mediacontent'] != null || $p['mediacontent'] != '') {
