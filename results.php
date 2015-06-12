@@ -26,9 +26,8 @@ $instaposts->setFetchMode(PDO::FETCH_ASSOC);
         <h2>Vine</h2>
         <?php
         foreach ($vineposts as $p) {
-            echo $p['username'] . "<br>";
-            
-            var_dump($p['video']);
+            echo $p['username'] . "<br />";
+            echo $p['video'] . "<br />";
         }
         ?>
     </div>
