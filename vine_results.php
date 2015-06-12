@@ -13,13 +13,7 @@ foreach($search['data']['records'] as $key => $value)
    $embed = file_get_contents('https://vine.co/oembed.json?url='.urlencode($value['shareUrl']));
 
     $embed = json_decode($embed,true);
-//    
-////    echo '<div>
-////        <h2>'.$value['username'].'</h2>'
-////        .'<img src="'.$value['avatarUrl'].'" /><br />'
-////        .$embed['html']
-////        .'<br /><hr /><br />'
-////        .'</div>';
+    
     
         //new instance of vine class
         $vine = new VineClass;

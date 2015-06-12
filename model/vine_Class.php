@@ -28,8 +28,9 @@ Class VineClass{
     }
 
     public function insertVine(){
-        require 'db.php';
-
+        //require 'db.php';
+        $db = Database::getDB();
+        
         $username = $this->getUsername();
         $video = $this->getVideo();
 
