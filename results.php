@@ -3,6 +3,7 @@ require 'model/db.php';
 
 //get vine posts
 $query = 'SELECT * FROM vine';
+$db = Database::getDB();
 $vineposts = $db->query($query);
 //fetch associative arrays from the data so we can reference column names in the foreach loop
 $vineposts->setFetchMode(PDO::FETCH_ASSOC);
