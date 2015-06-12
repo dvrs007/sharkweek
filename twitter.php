@@ -2,7 +2,7 @@
 
 require 'twitter_credentials.php';
 require 'twitteroauth-master/autoload.php';  //this is inside of downloaded folder	
-require 'model/database.php';
+
 require 'model/twitterClass.php';
 
 //https://twitteroauth.com/
@@ -25,11 +25,11 @@ $parameters = array(
 $results = $connection->get('search/tweets', $parameters);
 //1st arg: api call,  2nd arg:pass those in as an array
 
-
+/*
   echo '<pre>';
   print_r($results);
   echo '</pre>';
- 
+ */
 
 foreach ($results->statuses as $value) {
 //this was not working with $statuses->results June6

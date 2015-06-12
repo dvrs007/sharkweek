@@ -1,7 +1,7 @@
 <?php
 
 require 'model/instaClass.php';
-require 'model/db.php';
+//require 'model/db.php';
 
 	/*function pre($code){
 		echo '<pre>';
