@@ -2,14 +2,14 @@
 require 'model/db.php';
 
 //get vine posts
-$query = 'SELECT * FROM vine ORDER BY reg_date DESC LIMIT 10';
+$query = 'SELECT * FROM vine ORDER BY reg_date DESC';
 $db = Database::getDB();
 $vineposts = $db->query($query);
 //fetch associative arrays from the data so we can reference column names in the foreach loop
 $vineposts->setFetchMode(PDO::FETCH_ASSOC);
 
 //get twitter posts
-$query = 'SELECT  DISTINCT * FROM twitter ORDER BY dateposted';
+$query = 'SELECT  DISTINCT * FROM twitter ORDER BY dateposted DESC';
 $twitterposts = $db->query($query);
 //fetch associative arrays from the data so we can reference column names in the foreach loop
 $twitterposts->setFetchMode(PDO::FETCH_ASSOC);
