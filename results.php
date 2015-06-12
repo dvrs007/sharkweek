@@ -9,7 +9,7 @@ $vineposts = $db->query($query);
 $vineposts->setFetchMode(PDO::FETCH_ASSOC);
 
 //get twitter posts
-$query = 'SELECT  DISTINCT * FROM twitter ORDER BY dateposted DESC LIMIT 10';
+$query = 'SELECT  DISTINCT * FROM twitter ORDER BY dateposted';
 $twitterposts = $db->query($query);
 //fetch associative arrays from the data so we can reference column names in the foreach loop
 $twitterposts->setFetchMode(PDO::FETCH_ASSOC);
