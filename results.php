@@ -1,9 +1,10 @@
 <?php
-require 'model/db.php';
+require 'model/database.php';
+$db = Database::getDB();
 
 //get vine posts
 $query = 'SELECT * FROM vine ORDER BY reg_date DESC';
-$db = Database::getDB();
+
 $vineposts = $db->query($query);
 //fetch associative arrays from the data so we can reference column names in the foreach loop
 $vineposts->setFetchMode(PDO::FETCH_ASSOC);
@@ -36,7 +37,7 @@ $instaposts->setFetchMode(PDO::FETCH_ASSOC);
         <?php
         foreach ($twitterposts as $p) {
             echo '<img src="' . $p['avatar'] . '" alt="profile pic from "' . $p['username'] . 'title="avatar" />';
-            echo ' '.$p['username'] . " | <i>" . $p['acctname'] . '</i><br/>';
+            echo ' <a href="http://twitter.com/'.$p['acctname'].'" target="_blank">'.$p['username'] . " @ <i>" . $p['acctname'] . '</i></a><br/>';
             echo '# ' . $p['hashtags'].'<br/>';
             echo '<strong>'.$p['txtcontent'] . '</strong><br/>';
 
