@@ -2,7 +2,7 @@
 require 'model/db.php';
 
 //get vine posts
-$query = 'SELECT * FROM vine';
+$query = 'SELECT * FROM vine ORDER BY reg_date DESC LIMIT 10';
 $db = Database::getDB();
 $vineposts = $db->query($query);
 //fetch associative arrays from the data so we can reference column names in the foreach loop
@@ -27,6 +27,8 @@ $instaposts->setFetchMode(PDO::FETCH_ASSOC);
         <?php
         foreach ($vineposts as $p) {
             echo $p['username'] . "<br>";
+            
+            var_dump($p['video']);
         }
         ?>
     </div>
