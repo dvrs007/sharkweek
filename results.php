@@ -29,7 +29,7 @@ $instaposts->setFetchMode(PDO::FETCH_ASSOC);
         <?php
         foreach ($vineposts as $p) {
             echo $p['username'] . "<br />";
-            echo $p['video'] . "<br />";
+            echo $p['video'] . "<br /><hr />";
         }
         ?>
     </div>
@@ -57,7 +57,7 @@ $instaposts->setFetchMode(PDO::FETCH_ASSOC);
             <?php
             foreach ($instaposts as $p) {
                 echo '<div>' . $p['user'] . '</div>';
-                echo '<img src="' . $p['img'] . '" alt="Image from ' . $p['user'] . '">';
+                echo '<img src="' . $p['img'] . '" alt="Image from ' . $p['user'] . '"><br /><hr />';
             }
             ?>
     </div>
