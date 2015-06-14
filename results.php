@@ -93,17 +93,44 @@
                     echo '<p><i class="fa fa-heart"></i> ' . $p['likes'] . ' Likes</p>';
                 }
 
-                echo date('M j, Y, h:i:sa', $p['created_time']);
+                /* Time posted */
+
+                $now = time();
+                $posted = $p['created_time'];
+                $diff = ($now - $posted);
+
+                //var_dump($diff);
+
+                if($diff <= 3599)
+                {
+                    echo date("i", $diff) . 'm'; //get minutes
+                }
+                else if ($diff > 3600)
+                {
+                    echo (date("h", $diff) - 1) . 'h'; //get hours
+                }
+                else if ($diff > 86399)
+                {
+                    echo (date("d", $diff) - 1) . 'd'; //get days
+                }
+                else if ($diff > 604800)
+                {
+                    echo (date("w", $diff) - 1) . 'w'; //get weeks
+                }
+
+                /* User profile */
+
                 echo '<p>Posted by: <a href="http://instagram.com/' . $p['user'] . '/" target="_blank" alt="View Profile">' . $p['user'] . '</a></p>';
 
                 /* Displaying hashtags */
+
                 $str = $p['caption'];
                 $str = str_replace("#"," #", $str);
                 $caption = explode(" ", $str);
 
                 foreach ($caption as $c) 
                 {
-                    if(preg_match('/#/',$c))
+                    if(preg_match('/#\w+/',$c))
                     {   
                         $tag = str_replace("#","", $c);
                         echo '<a href="http://instagram.com/explore/tags/' . $tag . '/" target="_blank">' . $c . '</a> ';
