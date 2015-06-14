@@ -12,12 +12,6 @@ body {
 	min-width: 100%;
 }
 
-.container {
-	height: 100%!important;
-	min-height: 100%!important;
-	height: auto !important;
-}
-
 .columns {
 	padding-left:0;
 	padding-right:0;
@@ -64,7 +58,7 @@ body {
 	margin-left: -20px;
 }
 
-/* Vine */
+/* --- Vine --- */
 
 .vine-title {
 	background: #16F4D0;
@@ -78,7 +72,7 @@ body {
 	width: 100%;
 }
 
-/* Twitter */
+/* --- Twitter --- */
 
 .twitter-title {
 	background: #429EA6;
@@ -89,7 +83,7 @@ body {
 }
 
 
-/* Instagram */
+/* --- Instagram --- */
 
 .insta-posts p {
 	margin:0;
@@ -104,8 +98,9 @@ body {
 }
 
 .insta-img img {
-	padding-bottom: 20px;
-	padding-right: 20px;
+	border: 1px solid #ddd;
+	margin-bottom: 20px;
+	margin-right: 20px;
 }
 
 .insta-img,
@@ -121,10 +116,12 @@ body {
 	color: #EA3788;
 }
 
+/* --- Footer --- */
+
 .footer {
 	clear: both;
     width:100%;
-    line-height:50px;   /* Height of the footer */
+    line-height:50px;
     background:#aaa;
     color: #fff;
     text-align: center;

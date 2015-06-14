@@ -2,10 +2,7 @@
 
 require 'model/database.php';
 require 'model/instaClass.php';
- 
-define( 'CLIENT_ID', 'ede51ae1fd5e43dca130ac6f239eb589' );
-define( 'CLIENT_SECRET', '2894f8ff8dc84eca8ceaf3d222b6cdef' );
-
+require 'insta_credentials.php';
 require 'Instagram-PHP-API-master/src/Instagram.php';
 
 use MetzWeb\Instagram\Instagram;
@@ -15,9 +12,11 @@ $instagram = new Instagram( CLIENT_ID );
 $search = $instagram->getTagMedia( 'sharkweek' );
 
 
+/*
 echo '<pre>';
 print_r($search);
 echo '</pre>';
+*/
 
 
 foreach ( $search->data as $key => $value ) {
