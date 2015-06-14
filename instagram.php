@@ -11,13 +11,11 @@ $instagram = new Instagram( CLIENT_ID );
 
 $search = $instagram->getTagMedia( 'sharkweek' );
 
-
 /*
 echo '<pre>';
 print_r($search);
 echo '</pre>';
 */
-
 
 foreach ( $search->data as $key => $value ) {
 
