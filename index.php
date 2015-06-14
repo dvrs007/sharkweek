@@ -25,7 +25,7 @@ if ($action == 'getposts'){
 	$twitterposts->setFetchMode(PDO::FETCH_ASSOC);
 
 	//get instagram posts
-	$query = 'SELECT * FROM instagram ORDER BY id DESC LIMIT 10';
+	$query = 'SELECT * FROM instagram ORDER BY id DESC LIMIT 15';
 	$instaposts = $db->query($query);
 	$instaposts->setFetchMode(PDO::FETCH_ASSOC);
 
