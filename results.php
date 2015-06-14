@@ -55,7 +55,7 @@
             foreach ($twitterposts as $p) 
             {
                 echo '<img src="' . $p['avatar'] . '" alt="profile pic from "' . $p['username'] . 'title="avatar" />';
-                echo ' '.$p['username'] . " | <i>" . $p['acctname'] . '</i><br/>';
+                echo ' <a href="http://twitter.com/'.$p['acctname'].'" target="_blank">'.$p['username'] . " @ <i>" . $p['acctname'] . '</i></a><br/>';
                 echo '# ' . $p['hashtags'].'<br/>';
                 echo '<strong>'.$p['txtcontent'] . '</strong><br/>';
 

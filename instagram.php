@@ -1,6 +1,6 @@
 <?php
 
-require 'model/database.php';
+//require 'model/database.php';
 require 'model/instaClass.php';
 require 'insta_credentials.php';
 require 'Instagram-PHP-API-master/src/Instagram.php';
