@@ -2,7 +2,7 @@
 
 Class Insta {
     
-    private $user,$fname,$img,$img_id,$likes,$link;
+    private $user,$fname,$img,$img_id,$caption,$likes,$link,$created_time;
 
     public function __construct(){}
 
@@ -38,6 +38,14 @@ Class Insta {
         $this->img_id=$value;
     }
 
+    public function getCaption(){   
+        return $this->caption;
+    }
+    
+    public function setCaption($value){
+        $this->caption=$value;
+    }
+
     public function getLikes(){   
         return $this->likes;
     }
@@ -54,6 +62,14 @@ Class Insta {
         $this->link=$value;
     }
 
+    public function getCreatedTime(){   
+        return $this->created_time;
+    }
+    
+    public function setCreatedTime($value){
+        $this->created_time=$value;
+    }
+
     public function insertInsta(){
 
     	$db = Database::getDB();
@@ -62,13 +78,15 @@ Class Insta {
         $fname = $this->getFullName();
         $img = $this->getImg();
         $imgID = $this->getImgID();
+        $caption = $this->getCaption();
         $likes = $this->getLikes();
         $link = $this->getLink();
+        $time = $this->getCreatedTime();
 
 	    $query = "INSERT IGNORE INTO instagram
-	    		  (user, full_name, img, img_id, likes, link)
+	    		  (user, full_name, img, img_id, caption, likes, link, created_time)
 	    		  VALUES
-	    		  ('$user','$fname','$img','$imgID','$likes','$link')";
+	    		  ('$user','$fname','$img','$imgID', '$caption', '$likes','$link', '$time')";
 
 	   	$addInsta = $db->exec($query);
 	   	return $addInsta;
