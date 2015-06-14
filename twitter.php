@@ -58,7 +58,7 @@ foreach ($results->statuses as $value) {
       $twitterClass->setTxtContent($value->text);
       $twitterClass->setMediaContent($value->entities->media[0]->media_url_https);
       $twitterClass->setLink($value->entities->urls[0]->expanded_url);
-      $twitterClass->setDateposted(date("Y-m-d H:i:s A",strtotime($value->created_at)));
+      $twitterClass->setDateposted(date("Y-m-d h:i:s a",strtotime($value->created_at)));
       $twitterClass->setPostingID($value->id_str);
 
       $twitterClass->insertTwitter();
