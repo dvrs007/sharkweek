@@ -1,5 +1,34 @@
 <?php
-include 'views/header.php';
-include 'results.php';
-include 'views/footer.php';
-?>
+
+require 'model/database.php';
+
+if (isset($_POST['action'])) {
+    $action = $_POST['action'];
+} else if (isset($_GET['action'])) {
+    $action = $_GET['action'];
+} else {
+    $action = 'getposts';
+}
+
+if ($action == 'getposts'){
+
+	$db = Database::getDB();
+
+	//get vine posts
+	$query = 'SELECT * FROM vine ORDER BY reg_date DESC LIMIT 10';
+	$vineposts = $db->query($query);
+	$vineposts->setFetchMode(PDO::FETCH_ASSOC);
+
+	//get twitter posts
+	$query = 'SELECT  DISTINCT * FROM twitter ORDER BY dateposted DESC LIMIT 10';
+	$twitterposts = $db->query($query);
+	$twitterposts->setFetchMode(PDO::FETCH_ASSOC);
+
+	//get instagram posts
+	$query = 'SELECT * FROM instagram ORDER BY id DESC LIMIT 10';
+	$instaposts = $db->query($query);
+	$instaposts->setFetchMode(PDO::FETCH_ASSOC);
+
+	include 'results.php';
+
+}
