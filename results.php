@@ -1,10 +1,11 @@
 <?php
-require 'model/database.php';
-$db = Database::getDB();
+
+include 'views/header.php';
+require 'model/db.php';
 
 //get vine posts
 $query = 'SELECT * FROM vine ORDER BY reg_date DESC';
-
+//$db = Database::getDB();
 $vineposts = $db->query($query);
 //fetch associative arrays from the data so we can reference column names in the foreach loop
 $vineposts->setFetchMode(PDO::FETCH_ASSOC);
@@ -28,7 +29,7 @@ $instaposts->setFetchMode(PDO::FETCH_ASSOC);
         <?php
         foreach ($vineposts as $p) {
             echo $p['username'] . "<br />";
-            echo $p['video'] . "<br />";
+            echo $p['video'] . "<br /><hr />";
         }
         ?>
     </div>
@@ -37,7 +38,7 @@ $instaposts->setFetchMode(PDO::FETCH_ASSOC);
         <?php
         foreach ($twitterposts as $p) {
             echo '<img src="' . $p['avatar'] . '" alt="profile pic from "' . $p['username'] . 'title="avatar" />';
-            echo ' <a href="http://twitter.com/'.$p['acctname'].'" target="_blank">'.$p['username'] . " @ <i>" . $p['acctname'] . '</i></a><br/>';
+            echo ' '.$p['username'] . " | <i>" . $p['acctname'] . '</i><br/>';
             echo '# ' . $p['hashtags'].'<br/>';
             echo '<strong>'.$p['txtcontent'] . '</strong><br/>';
 
@@ -56,8 +57,11 @@ $instaposts->setFetchMode(PDO::FETCH_ASSOC);
             <?php
             foreach ($instaposts as $p) {
                 echo '<div>' . $p['user'] . '</div>';
-                echo '<img src="' . $p['img'] . '" alt="Image from ' . $p['user'] . '">';
+                echo '<img src="' . $p['img'] . '" alt="Image from ' . $p['user'] . '"><br /><hr />';
             }
             ?>
     </div>
 </div>
+<?php 
+    include 'views/footer.php';
+    ?>

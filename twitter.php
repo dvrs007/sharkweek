@@ -1,7 +1,10 @@
 <?php
-require 'model/twitterClass.php';
+
 require 'twitter_credentials.php';
 require 'twitteroauth-master/autoload.php';  //this is inside of downloaded folder	
+
+require 'model/twitterClass.php';
+
 //https://twitteroauth.com/
 use Abraham\TwitterOAuth\TwitterOAuth;   //abrahamclass/library/object
 
@@ -22,10 +25,11 @@ $parameters = array(
 $results = $connection->get('search/tweets', $parameters);
 //1st arg: api call,  2nd arg:pass those in as an array
 
+/*
   echo '<pre>';
   print_r($results);
   echo '</pre>';
- 
+ */
 
 foreach ($results->statuses as $value) {
 //this was not working with $statuses->results June6
@@ -43,7 +47,8 @@ foreach ($results->statuses as $value) {
     //print_r($tags);
     //echo '</pre>';
     //echo implode("" , $tags);
-   
+    
+  
       $twitterClass = new Twitter();
 
       $twitterClass->setUsername($value->user->name);
@@ -90,7 +95,8 @@ foreach ($results->statuses as $value) {
     }
     echo '<br/>Posted at: ' . date("Y-m-d H:i:s", strtotime($value->created_at)) . '<br/>';
     echo '<br/><hr/><br/>'
-    . '</div>';     
+    . '</div>';
+     
     */
 }
 ?>
