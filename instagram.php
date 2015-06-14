@@ -1,6 +1,6 @@
 <?php
 
-require 'model/database.php';
+//require 'model/database.php';
 require 'model/instaClass.php';
  
 define( 'CLIENT_ID', 'ede51ae1fd5e43dca130ac6f239eb589' );

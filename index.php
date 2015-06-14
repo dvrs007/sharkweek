@@ -20,7 +20,7 @@ if ($action == 'getposts'){
 	$vineposts->setFetchMode(PDO::FETCH_ASSOC);
 
 	//get twitter posts
-	$query = 'SELECT  DISTINCT * FROM twitter ORDER BY dateposted DESC LIMIT 10';
+	$query = 'SELECT  DISTINCT * FROM twitter ORDER BY dateposted DESC LIMIT 20';
 	$twitterposts = $db->query($query);
 	$twitterposts->setFetchMode(PDO::FETCH_ASSOC);
 
