@@ -28,7 +28,7 @@
 
 <div class="row">
     <div class="medium-4 columns">
-        <div class="posts">
+        <div class="posts-list">
         <?php
 
             /* --------------------------- *\
@@ -45,7 +45,7 @@
     </div><!-- end vine -->
 
     <div class="medium-4 smacolumns">
-        <div class="posts">
+        <div class="posts-list">
         <?php
 
             /* --------------------------- *\
@@ -72,7 +72,7 @@
     </div><!-- end twitter-->
 
     <div class="medium-4 columns">
-        <div class="posts">
+        <div class="posts-list">
         <?php
 
             /* --------------------------- *\
@@ -80,12 +80,37 @@
             \* --------------------------- */
 
             foreach ($instaposts as $p) {
+
+                echo '<div class="insta-posts">';
                 echo '<div class="insta-img"><a href="' . $p['link'] . '" target="_blank" alt="View Image"><img src="' . $p['img'] . '" alt="Image from ' . $p['user'] . '"></a></div>';
-                echo '<div class="insta-details">';
-                echo '<p><i class="fa fa-heart"></i> ' . $p['likes'] . '</p>';
-                echo '<a href="http://instagram.com/' . $p['user'] . '/" target="_blank" alt="View Profile">' . $p['user'] . '</a></p>';
-                echo '</div>';
-                echo '<hr />';
+                
+
+                if($p['likes'] == 1)
+                {
+                    echo '<p><i class="fa fa-heart"></i> ' . $p['likes'] . ' Like</p>';
+                }else
+                {
+                    echo '<p><i class="fa fa-heart"></i> ' . $p['likes'] . ' Likes</p>';
+                }
+
+                echo date('M j, Y, h:i:sa', $p['created_time']);
+                echo '<p>Posted by: <a href="http://instagram.com/' . $p['user'] . '/" target="_blank" alt="View Profile">' . $p['user'] . '</a></p>';
+
+                /* Displaying hashtags */
+                $str = $p['caption'];
+                $str = str_replace("#"," #", $str);
+                $caption = explode(" ", $str);
+
+                foreach ($caption as $c) 
+                {
+                    if(preg_match('/#/',$c))
+                    {   
+                        $tag = str_replace("#","", $c);
+                        echo '<a href="http://instagram.com/explore/tags/' . $tag . '/" target="_blank">' . $c . '</a> ';
+                    }
+                }
+
+                echo '</div><hr />';
             }
         ?>
         </div>
