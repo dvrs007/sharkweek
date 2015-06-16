@@ -26,6 +26,17 @@ $(document).ready(function(){
         	var instaColNew = document.getElementById("insta_col");
         	instaColNew.style.display = "none";
 
+        	//set opacity
+
+        	var vineOpacNew = document.getElementById("vine_logo");
+        	vineOpacNew.style.opacity = "1";
+
+        	var twitterOpacNew = document.getElementById("twitter_logo");
+        	twitterOpacNew.style.opacity = ".5";
+
+        	var instaOpacNew = document.getElementById("insta_logo");
+        	instaOpacNew.style.opacity = ".5";
+
 
         	$( ".col-title" ).click(function(index) {
 
@@ -41,6 +52,9 @@ $(document).ready(function(){
         		var chosenCol = document.getElementById(currentSelection + "_col");
         		chosenCol.style.display = "block";
 
+        		var chosenOpacity = document.getElementById(currentSelection + "_logo");
+        		chosenOpacity.style.opacity = "1";
+
         		//hide elements not selected
 
         		var socialClasses = document.getElementsByClassName('col-title');
@@ -52,6 +66,9 @@ $(document).ready(function(){
 
         				var otherFeed = document.getElementById(socialClasses[i].id + "_col");
         				otherFeed.style.display = "none";
+
+        				var otherOpacity = document.getElementById(socialClasses[i].id + "_logo");
+        				otherOpacity.style.opacity = ".5";
         			}
         		}
         	});
@@ -79,6 +96,17 @@ $(document).ready(function(){
 
         	var instaColInitial = document.getElementById("insta_col");
         	instaColInitial.style.display = "block";
+
+        	//reset opacity
+
+        	var vineOpacInitial = document.getElementById("vine_logo");
+        	vineOpacInitial.style.opacity = "1";
+
+        	var twitterOpacInitial = document.getElementById("twitter_logo");
+        	twitterOpacInitial.style.opacity = "1";
+
+        	var instaOpacInitial = document.getElementById("insta_logo");
+        	instaOpacInitial.style.opacity = "1";
 
         	// $( ".col-title" ).click(function(event){
         	// 	return false;
