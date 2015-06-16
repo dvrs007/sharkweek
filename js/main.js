@@ -1,5 +1,7 @@
 $(document).ready(function(){
 
+	var socialArray = ['vine', 'twitter', 'insta'];
+
 	$(window).resize(function() {
         
         if ($(window).width() <= 623) {
@@ -92,36 +94,30 @@ $(document).ready(function(){
 
         	//reset notches
 
-	        var vineInital = document.getElementById("vine_notch");
-	        vineInital.style.visibility = "visible";
+        	for (i = 0; i < socialArray.length; i++) {
 
-	        var twitterInital = document.getElementById("twitter_notch");
-	        twitterInital.style.visibility = "visible";
+		        var Initial = document.getElementById(socialArray[i] + "_notch");
+		        Initial.style.visibility = "visible";
 
-	        var instaInital = document.getElementById("insta_notch");
-	        instaInital.style.visibility = "visible";
+	        }
 
 	        //reset columns
 
-	        var vineColInitial = document.getElementById("vine_col");
-        	vineColInitial.style.display = "block";
+	        for (i = 0; i < socialArray.length; i++) {
 
-        	var twitterColInitial = document.getElementById("twitter_col");
-        	twitterColInitial.style.display = "block";
+		        var ColInitial = document.getElementById(socialArray[i] + "_col");
+		        ColInitial.style.visibility = "visible";
 
-        	var instaColInitial = document.getElementById("insta_col");
-        	instaColInitial.style.display = "block";
+	        }
 
         	//reset opacity
 
-        	var vineOpacInitial = document.getElementById("vine_logo");
-        	vineOpacInitial.style.opacity = "1";
+        	for (i = 0; i < socialArray.length; i++) {
 
-        	var twitterOpacInitial = document.getElementById("twitter_logo");
-        	twitterOpacInitial.style.opacity = "1";
+		        var OpacInitial = document.getElementById(socialArray[i] + "_logo");
+		        OpacInitial.style.visibility = "visible";
 
-        	var instaOpacInitial = document.getElementById("insta_logo");
-        	instaOpacInitial.style.opacity = "1";
+	        }
 
     	}   
 
