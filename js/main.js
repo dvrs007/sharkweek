@@ -106,7 +106,7 @@ $(document).ready(function(){
 	        for (i = 0; i < socialArray.length; i++) {
 
 		        var ColInitial = document.getElementById(socialArray[i] + "_col");
-		        ColInitial.style.visibility = "visible";
+		        ColInitial.style.display = "block";
 
 	        }
 
@@ -115,7 +115,7 @@ $(document).ready(function(){
         	for (i = 0; i < socialArray.length; i++) {
 
 		        var OpacInitial = document.getElementById(socialArray[i] + "_logo");
-		        OpacInitial.style.visibility = "visible";
+		        OpacInitial.style.opacity = "1";
 
 	        }
 
