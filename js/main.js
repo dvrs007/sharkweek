@@ -1,42 +1,45 @@
 $(document).ready(function(){
 
+	var socialArray = ['vine', 'twitter', 'insta'];
+
 	$(window).resize(function() {
         
         if ($(window).width() <= 623) {
 
         	//set notches
 
-        	var vineNew = document.getElementById("vine_notch");
-        	vineNew.style.visibility = "visible"
-
-        	var twitterNew = document.getElementById("twitter_notch");
-        	twitterNew.style.visibility = "hidden";
-
-        	var instaNew = document.getElementById("insta_notch");
-        	instaNew.style.visibility = "hidden";
+            for (i = 0; i < socialArray.length; i++) {
+                var notchNew = document.getElementById(socialArray[i] + "_notch");
+                if(socialArray[i] === 'vine'){
+                    notchNew.style.visibility = "visible";
+                }else{
+                    notchNew.style.visibility = "hidden";
+                }
+            }
 
         	//set columns
 
-        	var vineColNew = document.getElementById("vine_col");
-        	vineColNew.style.display = "block";
-
-        	var twitterColNew = document.getElementById("twitter_col");
-        	twitterColNew.style.display = "none";
-
-        	var instaColNew = document.getElementById("insta_col");
-        	instaColNew.style.display = "none";
+            for (i = 0; i < socialArray.length; i++) {
+                var colNew = document.getElementById(socialArray[i] + "_col");
+                if(socialArray[i] === 'vine'){
+                    colNew.style.display = "block";
+                }else{
+                    colNew.style.display = "none";
+                }
+            }
 
         	//set opacity
 
-        	var vineOpacNew = document.getElementById("vine_logo");
-        	vineOpacNew.style.opacity = "1";
+            for (i = 0; i < socialArray.length; i++) {
+                var opacNew = document.getElementById(socialArray[i] + "_logo");
+                if(socialArray[i] === 'vine'){
+                    opacNew.style.opacity = "1";
+                }else{
+                    opacNew.style.opacity = ".5";
+                }
+            }
 
-        	var twitterOpacNew = document.getElementById("twitter_logo");
-        	twitterOpacNew.style.opacity = ".5";
-
-        	var instaOpacNew = document.getElementById("insta_logo");
-        	instaOpacNew.style.opacity = ".5";
-
+            //header click
 
         	$( ".col-title" ).click(function(index) {
 
@@ -92,36 +95,30 @@ $(document).ready(function(){
 
         	//reset notches
 
-	        var vineInital = document.getElementById("vine_notch");
-	        vineInital.style.visibility = "visible";
+        	for (i = 0; i < socialArray.length; i++) {
 
-	        var twitterInital = document.getElementById("twitter_notch");
-	        twitterInital.style.visibility = "visible";
+		        var Initial = document.getElementById(socialArray[i] + "_notch");
+		        Initial.style.visibility = "visible";
 
-	        var instaInital = document.getElementById("insta_notch");
-	        instaInital.style.visibility = "visible";
+	        }
 
 	        //reset columns
 
-	        var vineColInitial = document.getElementById("vine_col");
-        	vineColInitial.style.display = "block";
+	        for (i = 0; i < socialArray.length; i++) {
 
-        	var twitterColInitial = document.getElementById("twitter_col");
-        	twitterColInitial.style.display = "block";
+		        var ColInitial = document.getElementById(socialArray[i] + "_col");
+		        ColInitial.style.display = "block";
 
-        	var instaColInitial = document.getElementById("insta_col");
-        	instaColInitial.style.display = "block";
+	        }
 
         	//reset opacity
 
-        	var vineOpacInitial = document.getElementById("vine_logo");
-        	vineOpacInitial.style.opacity = "1";
+        	for (i = 0; i < socialArray.length; i++) {
 
-        	var twitterOpacInitial = document.getElementById("twitter_logo");
-        	twitterOpacInitial.style.opacity = "1";
+		        var OpacInitial = document.getElementById(socialArray[i] + "_logo");
+		        OpacInitial.style.opacity = "1";
 
-        	var instaOpacInitial = document.getElementById("insta_logo");
-        	instaOpacInitial.style.opacity = "1";
+	        }
 
     	}   
 

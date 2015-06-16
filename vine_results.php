@@ -1,5 +1,6 @@
 <?php
 require 'model/vine_Class.php';
+require 'model/database.php';
 
 $search = file_get_contents('https://api.vineapp.com/timelines/tags/sharkweek');
 
@@ -23,7 +24,7 @@ foreach($search['data']['records'] as $key => $value)
         //insert results into database
         $vine->insertVine();
         
-        var_dump($vine);
+        //var_dump($vine);
     
 }
 
