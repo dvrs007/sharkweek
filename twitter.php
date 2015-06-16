@@ -25,7 +25,7 @@ $parameters = array(
 $results = $connection->get('search/tweets', $parameters);
 //1st arg: api call,  2nd arg:pass those in as an array
 
-
+echo '<h1>-----------------TIWTTER starts----------------</h1>';
 echo '<pre>';
 print_r($results);
 echo '</pre>';
@@ -82,8 +82,7 @@ foreach ($results->statuses as $value) {
     echo '<br/>Posted at: ' . date("Y-m-d H:i:s", strtotime($value->created_at)) . '<br/>';
     echo '<br/><hr/><br/>'
     . '</div>';
-
-
+    
     //-- INSERT results into database-------//
     $twitterClass = new Twitter();
 
@@ -99,4 +98,5 @@ foreach ($results->statuses as $value) {
 
     $twitterClass->insertTwitter();
 }
+echo '<h1>------------------TIWTTER ends----------------</h1>';
 ?>
