@@ -126,19 +126,3 @@ body {
     color: #fff;
     text-align: center;
 }
-
-@media only screen and (max-width: 656px){
-
-	.notch{
-		visibility: hidden;
-	}
-
-	#insta_col{
-		display: none;
-	}
-
-	#twitter_col{
-		display: none;
-	}
-
-}

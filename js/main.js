@@ -2,7 +2,7 @@ $(document).ready(function(){
 
 	$(window).resize(function() {
         
-        if ($(window).width() <= 656) {
+        if ($(window).width() <= 620) {
 
         	//set notches
 
@@ -79,6 +79,10 @@ $(document).ready(function(){
 
         	var instaColInitial = document.getElementById("insta_col");
         	instaColInitial.style.display = "block";
+
+        	// $( ".col-title" ).click(function(event){
+        	// 	return false;
+        	// });
     	}       
     }).resize();  
 });
