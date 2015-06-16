@@ -7,28 +7,28 @@
     </div>
 
     <div class="medium-4 small-4 columns">
-        <div class="col-title vine-title">
-            <h2><i class="fa fa-vine"></i></h2>
-            <b class="notch"></b>
+        <div class="col-title vine-title" id="vine">
+            <h2 id="vine_logo"><i class="fa fa-vine"></i></h2>
+            <b class="notch" id="vine_notch"></b>
         </div>
     </div>
     <div class="medium-4 small-4 columns">
-        <div class="col-title twitter-title">
-            <h2><i class="fa fa-twitter"></i></h2>
-            <b class="notch"></b>
+        <div class="col-title twitter-title" id="twitter">
+            <h2 id="twitter_logo"><i class="fa fa-twitter"></i></h2>
+            <b class="notch" id="twitter_notch"></b>
         </div>
     </div>
     <div class="medium-4 small-4 columns">
-        <div class="col-title insta-title">
-            <h2><i class="fa fa-instagram"></i></h2>
-            <b class="notch"></b>
+        <div class="col-title insta-title" id="insta">
+            <h2 id="insta_logo"><i class="fa fa-instagram"></i></h2>
+            <b class="notch" id="insta_notch"></b>
         </div>
     </div>
 </div>
 
 <div class="row">
     <div class="medium-4 columns">
-        <div class="posts-list">
+        <div class="posts-list" id="vine_col">
         <?php
 
             /* --------------------------- *\
@@ -45,7 +45,7 @@
     </div><!-- end vine -->
 
     <div class="medium-4 smacolumns">
-        <div class="posts-list">
+        <div class="posts-list" id="twitter_col">
         <?php
 
             /* --------------------------- *\
@@ -72,7 +72,7 @@
     </div><!-- end twitter-->
 
     <div class="medium-4 columns">
-        <div class="posts-list">
+        <div class="posts-list" id="insta_col">
         <?php
 
             /* --------------------------- *\
