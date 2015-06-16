@@ -62,41 +62,5 @@ foreach ($results->statuses as $value) {
       $twitterClass->setPostingID($value->id_str);
 
       $twitterClass->insertTwitter();
-/*
-    echo $value->id_str.'<br/>';
-    echo '<div>
-	 <h2>' . $value->user->name . ' // account name: ' . $value->user->screen_name . '</h2>
-	 <img src="' . $value->user->profile_image_url_https . '"/>	<br/>
-	 Content: <strong>' . $value->text . '</strong><br/>
-         Hash Tags: ';
-    //$hashtags = array();
-    //$hashtags = $value->entities->hashtags;
-    //$n = count($hashtags);
-
-    for ($i = 0; $i < $n; $i++) {
-        echo ' [' . ($i + 1) . '] ' . $hashtags[$i]->text;
-    }
-
-    echo '<br/>';
-
-    $media = $value->entities->media[0];
-    $type = $media->type;
-    if ($media != null || $media != '') {
-        if ($type == 'photo') {
-            echo 'Media: <img src="' . $media->media_url_https . '"/><br/>';
-        }
-    }
-
-    $link = $value->entities->urls[0]->expanded_url;
-    if ($link == '' || $link == NULL) {
-        echo 'Link: N/A';
-    } else {
-        echo 'Link: <a href="' . $link . '" target="_blank">Click for the actual post</a>';
-    }
-    echo '<br/>Posted at: ' . date("Y-m-d H:i:s", strtotime($value->created_at)) . '<br/>';
-    echo '<br/><hr/><br/>'
-    . '</div>';
-     
-    */
 }
 ?>
