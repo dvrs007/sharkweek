@@ -6,7 +6,7 @@ $search = file_get_contents('https://api.vineapp.com/timelines/tags/sharkweek');
 //convert to json and display as an array
 $search = json_decode($search, true);
 
-//pre($search);
+pre($search);
 
 foreach($search['data']['records'] as $key => $value)
 {
