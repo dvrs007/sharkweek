@@ -2,7 +2,7 @@ $(document).ready(function(){
 
 	$(window).resize(function() {
         
-        if ($(window).width() <= 620) {
+        if ($(window).width() <= 623) {
 
         	//set notches
 
