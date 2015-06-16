@@ -40,40 +40,55 @@ $(document).ready(function(){
 
         	$( ".col-title" ).click(function(index) {
 
-        		//get selected ID
+        		if ($(window).width() <= 623){
 
-        		var currentSelection = index.currentTarget.id;
+	        		//get selected ID
 
-        		//put selected items into persepctive
+	        		var currentSelection = index.currentTarget.id;
 
-        		var chosenNotch = document.getElementById(currentSelection + "_notch");
-        		chosenNotch.style.visibility = "visible";
+	        		//put selected items into persepctive
 
-        		var chosenCol = document.getElementById(currentSelection + "_col");
-        		chosenCol.style.display = "block";
+	        		var chosenNotch = document.getElementById(currentSelection + "_notch");
+	        		chosenNotch.style.visibility = "visible";
 
-        		var chosenOpacity = document.getElementById(currentSelection + "_logo");
-        		chosenOpacity.style.opacity = "1";
+	        		var chosenCol = document.getElementById(currentSelection + "_col");
+	        		chosenCol.style.display = "block";
 
-        		//hide elements not selected
+	        		var chosenOpacity = document.getElementById(currentSelection + "_logo");
+	        		chosenOpacity.style.opacity = "1";
 
-        		var socialClasses = document.getElementsByClassName('col-title');
+	        		//hide elements not selected
 
-        		for (i = 0; i < socialClasses.length; i++) { 
-        			if(socialClasses[i].id != currentSelection){
-        				var otherNotch = document.getElementById(socialClasses[i].id + "_notch");
-        				otherNotch.style.visibility = "hidden";
+	        		var socialClasses = document.getElementsByClassName('col-title');
 
-        				var otherFeed = document.getElementById(socialClasses[i].id + "_col");
-        				otherFeed.style.display = "none";
+	        		for (i = 0; i < socialClasses.length; i++) {
 
-        				var otherOpacity = document.getElementById(socialClasses[i].id + "_logo");
-        				otherOpacity.style.opacity = ".5";
-        			}
+	        			if(socialClasses[i].id != currentSelection){
+
+	        				var otherNotch = document.getElementById(socialClasses[i].id + "_notch");
+	        				otherNotch.style.visibility = "hidden";
+
+	        				var otherFeed = document.getElementById(socialClasses[i].id + "_col");
+	        				otherFeed.style.display = "none";
+
+	        				var otherOpacity = document.getElementById(socialClasses[i].id + "_logo");
+	        				otherOpacity.style.opacity = ".5";
+	        			}
+	        		}
+
+        			return true;
+
+        		}else{
+
+        			return false;
+
         		}
-        	});
+
+    		});
 
         }else{
+
+        	//IF WINDOW RESIZE OCCURS
 
         	//reset notches
 
@@ -108,9 +123,8 @@ $(document).ready(function(){
         	var instaOpacInitial = document.getElementById("insta_logo");
         	instaOpacInitial.style.opacity = "1";
 
-        	// $( ".col-title" ).click(function(event){
-        	// 	return false;
-        	// });
-    	}       
+    	}   
+
     }).resize();  
+
 });
