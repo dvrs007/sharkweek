@@ -79,7 +79,7 @@ foreach ($results->statuses as $value) {
     } else {
         echo 'Link: <a href="' . $link . '" target="_blank">Click for the actual post</a>';
     }
-    echo '<br/>Posted at: ' . date("Y-m-d H:i:s", strtotime($value->created_at)) . '<br/>';
+    echo '<br/>Posted at: ' . date("Y-m-d H:i:s", strtotime($value->created_at)) . '<br/>'; //createdAt: GMT
     echo '<br/><hr/><br/>'
     . '</div>';
     
@@ -93,7 +93,7 @@ foreach ($results->statuses as $value) {
     $twitterClass->setTxtContent($value->text);
     $twitterClass->setMediaContent($value->entities->media[0]->media_url_https);
     $twitterClass->setLink($value->entities->urls[0]->expanded_url);
-    $twitterClass->setDateposted(date("Y-m-d h:i:s A", strtotime($value->created_at)));
+    $twitterClass->setDateposted(date("Y-m-d H:i:s", strtotime($value->created_at)));//createdAt: GMT
     $twitterClass->setPostingID($value->id_str);
 
     $twitterClass->insertTwitter();

@@ -62,10 +62,10 @@
                     echo '<a href="' . $p['link'] . '" target="_blank">Click for the actual post</a><br/>';
                 }
 
-                $triggerOn = date('m/d/Y h:i:s A', strtotime($p['dateposted']));
-                $server_tz = date_default_timezone_get(); //LosAngeles (Pacific)
+                $triggerOn = date('m/d/Y H:i:s', strtotime($p['dateposted'])); //in UTC/GMT
+                $utc_tz = date_default_timezone_get(); //returns UTC/GMT
 
-                $posted_date = new DateTime($triggerOn, new DateTimeZone($server_tz));
+                $posted_date = new DateTime($triggerOn, new DateTimeZone($utc_tz));
                 $posted_date->setTimeZone(new DateTimeZone('EDT')); //Eatern Time Zone-daylightsavings
                 $triggerOn = $posted_date->format('D, M jS Y h:i:s A');
 
