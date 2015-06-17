@@ -132,14 +132,15 @@ class TwitterOAuth extends Config
         $this->response->setApiPath($path);
         $url = sprintf('%s/%s', self::API_HOST, $path);
         $result = $this->oAuthRequest($url, 'POST', $parameters);
-        if ($this->getLastHttpCode() == 200) {
-            parse_str($result, $response);
-            $this->response->setBody($response);
 
-            return $response;
-        } else {
+        if ($this->getLastHttpCode() != 200) {
             throw new TwitterOAuthException($result);
         }
+
+        parse_str($result, $response);
+        $this->response->setBody($response);
+
+        return $response;
     }
 
     /**
@@ -330,12 +331,19 @@ class TwitterOAuth extends Config
                 if (!empty($postfields)) {
                     $options[CURLOPT_URL] .= '?' . Util::buildHttpQuery($postfields);
                 }
+                break;
             case 'PUT':
                 $options[CURLOPT_CUSTOMREQUEST] = 'PUT';
                 if (!empty($postfields)) {
                     $options[CURLOPT_URL] .= '?' . Util::buildHttpQuery($postfields);
                 }
+                break;
         }
+
+//        if (in_array($method, ['GET', 'PUT', 'DELETE']) && !empty($postfields)) {
+//            $options[CURLOPT_URL] .= '?' . Util::buildHttpQuery($postfields);
+//        }
+
 
         $curlHandle = curl_init();
         curl_setopt_array($curlHandle, $options);
@@ -367,7 +375,7 @@ class TwitterOAuth extends Config
     private function parseHeaders($header)
     {
         $headers = array();
-        foreach (explode("\r\n", $header) as $i => $line) {
+        foreach (explode("\r\n", $header) as $line) {
             if (strpos($line, ':') !== false) {
                 list ($key, $value) = explode(': ', $line);
                 $key = str_replace('-', '_', strtolower($key));
