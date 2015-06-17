@@ -13,6 +13,11 @@ $search = $instagram->getTagMedia( 'sharkweek' );
 
 foreach ( $search->data as $key => $value ) {
 
+	echo '<h1>-----------------Instagram starts----------------</h1>';
+	echo '<pre>';
+	print_r($search);
+	echo '</pre>';
+
 	$instagram = new Insta();
 
 	$instagram->setUser($value->user->username);

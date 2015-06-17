@@ -32,7 +32,7 @@
             <?php
             /* --------------------------- *\
               Vine
-              \* --------------------------- */
+            \* --------------------------- */
 
             foreach ($vineposts as $p) {
                 echo '<div>' . $p['username'] . '</div>';
@@ -81,7 +81,7 @@
             <?php
             /* --------------------------- *\
               Instagram
-              \* --------------------------- */
+            \* --------------------------- */
 
             foreach ($instaposts as $p) {
 
@@ -107,7 +107,7 @@
                     echo floor((date("h", $diff) - 2)) . 'h'; //get hours old
                 } else if ($diff > 86400) {
                     echo floor((date("d", $diff) - 2)) . 'd'; //get days old
-                }
+                } 
 
                 /* User profile */
 
