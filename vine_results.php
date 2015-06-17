@@ -38,7 +38,7 @@ echo '<h1>-----------------VINE starts----------------</h1>';
 pre($search);
 echo '<h1>-----------------VINE ends----------------</h1>';
 
-/*
+
 
 foreach($search['data']['records'] as $key => $value)
 {
@@ -57,5 +57,5 @@ foreach($search['data']['records'] as $key => $value)
         //var_dump($vine);
 }
 
-     */
+     
 ?>
