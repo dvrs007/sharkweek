@@ -1,5 +1,5 @@
 <?php
-//require 'model/vine_Class.php';
+require 'model/vine_Class.php';
 //require 'model/database.php';
 
 

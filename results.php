@@ -67,7 +67,7 @@
 
                 $posted_date = new DateTime($triggerOn, new DateTimeZone($server_tz));
                 $posted_date->setTimeZone(new DateTimeZone('EDT')); //Eatern Time Zone-daylightsavings
-                $triggerOn = $posted_date->format('D, M jS Y H:i:s A');
+                $triggerOn = $posted_date->format('D, M jS Y h:i:s A');
 
                 echo 'Posted at: ' . $triggerOn . ' (EDT)'.'<br/><hr/>';
                 //echo 'Posted at: ' . date('D, M/j/Y h:i:s A', strtotime($p['dateposted'])) . ' ' . date_default_timezone_get() . '(' . date('T') . ')' . '<br/><hr/>';

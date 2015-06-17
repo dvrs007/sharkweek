@@ -1,9 +1,9 @@
 <?php
 
-require 'twitter_credentials.php';
-require 'twitteroauth-master/autoload.php';  //this is inside of downloaded folder	
+require_once 'twitter_credentials.php';
+require_once 'twitteroauth-master/autoload.php';  //this is inside of downloaded folder	
 
-require 'model/twitterClass.php';
+require_once 'model/twitterClass.php';
 
 //https://twitteroauth.com/
 use Abraham\TwitterOAuth\TwitterOAuth;   //abrahamclass/library/object
