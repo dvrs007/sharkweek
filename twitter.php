@@ -12,14 +12,9 @@ $connection = new TwitterOAuth(
         CONSUMER_KEY, CONSUMER_SECRET, ACCESS_TOKEN, ACCESS_TOKEN_SECRET);
 
 $verify = $connection->get('account/verify_credentials');
-//get method request ....json converted to array
-//echo '<pre>';
-//print_r( $verify);
-//echo '</pre>';
 
 $parameters = array(
     'q' => '#sharkweek',
-    //'q' => '#webdevforhire',
     'count' => 20);
 
 $results = $connection->get('search/tweets', $parameters);
@@ -32,21 +27,15 @@ echo '</pre>';
 
 
 foreach ($results->statuses as $value) {
-//this was not working with $statuses->results June6
+
     $hashtags = array();
     $tags = array();
     $hashtags = $value->entities->hashtags;
     $n = count($hashtags);
 
     for ($i = 0; $i < $n; $i++) {
-        //echo ' [' . ($i + 1) . '] ' . $hashtags[$i]->text;
         $tags[] = ' [' . ($i + 1) . '] ' . $hashtags[$i]->text;
     }
-
-    //echo '<pre>';
-    //print_r($tags);
-    //echo '</pre>';
-    //echo implode("" , $tags);
     
     //--DISPLAY the results --------------//
     echo $value->id_str . '<br/>';
@@ -55,9 +44,6 @@ foreach ($results->statuses as $value) {
 	 <img src="' . $value->user->profile_image_url_https . '"/>	<br/>
 	 Content: <strong>' . $value->text . '</strong><br/>
          Hash Tags: ';
-    //$hashtags = array();
-    //$hashtags = $value->entities->hashtags;
-    //$n = count($hashtags);
 
     for ($i = 0; $i < $n; $i++) {
         echo ' [' . ($i + 1) . '] ' . $hashtags[$i]->text;

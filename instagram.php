@@ -11,12 +11,6 @@ $instagram = new Instagram( CLIENT_ID );
 
 $search = $instagram->getTagMedia( 'sharkweek' );
 
-echo '<h1>-----------------INSTAGRAM starts----------------</h1>';
-echo '<pre>';
-print_r($search);
-echo '</pre>';
-echo '<h1>------------------INSTAGRAM ends----------------</h1>';
-
 foreach ( $search->data as $key => $value ) {
 
 	$instagram = new Insta();
@@ -30,7 +24,6 @@ foreach ( $search->data as $key => $value ) {
 	$instagram->setLink($value->link);
 	$instagram->setCreatedTime($value->created_time);
 
-	//var_dump($instagram);
 	$instagram->insertInsta();
 
 }

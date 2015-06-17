@@ -93,15 +93,4 @@ Class Insta {
 
 	}
 
-    /*public function updateLikes($imgID,$likes){
-
-        $db = Database::getDB();
-
-        $query = 'UPDATE instagram SET likes = "' . $imgID . '" WHERE img_id = "' . $imgID . '"';
-        
-        $updatedLikes = $db->exec($query);
-        return $updatedLikes;
-
-    }*/
-
 }
