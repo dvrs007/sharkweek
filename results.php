@@ -104,11 +104,9 @@
                 if ($diff <= 3599) {
                     echo date("i", $diff) . 'm'; //get minutes old
                 } else if ($diff > 3600) {
-                    echo (date("h", $diff) - 1) . 'h'; //get hours old
-                } else if ($diff > 86399) {
-                    echo (date("d", $diff) - 1) . 'd'; //get days old
-                } else if ($diff > 604800) {
-                    echo (date("w", $diff) - 1) . 'w'; //get weeks old
+                    echo floor((date("h", $diff) - 2)) . 'h'; //get hours old
+                } else if ($diff > 86400) {
+                    echo floor((date("d", $diff) - 2)) . 'd'; //get days old
                 }
 
                 /* User profile */
