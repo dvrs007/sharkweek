@@ -8,27 +8,26 @@ Class VineClass{
     
  
     public function getUsername(){   
-       //read the category id from the table
+
         return $this->username;
     }
     
     public function setUsername($value){
-        //write the category id for the $value
         $this->username=$value;
     }
     
     public function getVideo(){
-        //read the category name from the table
+
         return $this->video;
     }
     
     public function setVideo($value){
-        //write the category name for the $value
+
         $this->video=$value;
     }
 
     public function insertVine(){
-        //require 'db.php';
+
         $db = Database::getDB();
         
         $username = $this->getUsername();

@@ -70,7 +70,7 @@
                 $triggerOn = $posted_date->format('D, M jS Y h:i:s A');
 
                 echo 'Posted at: ' . $triggerOn . ' (EDT)'.'<br/><hr/>';
-                //echo 'Posted at: ' . date('D, M/j/Y h:i:s A', strtotime($p['dateposted'])) . ' ' . date_default_timezone_get() . '(' . date('T') . ')' . '<br/><hr/>';
+
             }
             ?>
         </div>
