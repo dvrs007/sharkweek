@@ -24,11 +24,6 @@ function file_get_contents_curl($url) {
     return $data;
 }
 
-
-print_r( file('https://api.vineapp.com/timelines/tags/sharkweek'));
-
-
-
 $search = file_get_contents_curl('https://api.vineapp.com/timelines/tags/sharkweek');
 
 //convert to json and display as an array
@@ -38,9 +33,7 @@ echo '<h1>-----------------VINE starts----------------</h1>';
 pre($search);
 echo '<h1>-----------------VINE ends----------------</h1>';
 
-
-
-foreach($search['data']['records'] as $key => $value)
+foreach($searchNew['data']['records'] as $key => $value)
 {
    $embed = file_get_contents('https://vine.co/oembed.json?url='.urlencode($value['shareUrl']));
 
